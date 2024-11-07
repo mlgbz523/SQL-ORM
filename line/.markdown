@@ -1,0 +1,28 @@
+node 并发强
+切换默认 node版本
+nvm use XXX
+
+
+配置中国 npm 镜像
+npm config set registry https://registry.npm.taobao.org
+
+其他框架KOA
+
+创建 express 项目 以及输出JSON
+使用 nodemon 监听express 项目
+
+
+express generator 脚手架创建文件结构
+npm i -g express-generator@4
+
+项目结构创建
+express --no-view clwy-api
+不需要视图接口  + 名称
+
+cd 到目录并 npm i 安装依赖
+
+Sequelize ORM
+sequelize config 
+development.json 开发环境
+test 测试
+production 生产
