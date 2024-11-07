@@ -26,3 +26,26 @@ sequelize config
 development.json 开发环境
 test 测试
 production 生产
+
+生成OMR 数据模型
+sequelize model:generate --name Article --attributes title:string,content:text
+
+模型操作数据库
+
+模型的名字是单数  表的名字是复数 这样才能操作表
+
+迁移运行
+sequelize db:migrate
+
+日常开发项目，都是采用固定的步骤：
+
+| 步骤   | 命令                                                     | 说明                               |
+| :----- | :------------------------------------------------------- | :--------------------------------- |
+| 第一步 | sequelize model:generate --name Article --attributes ... | 建模型和迁移文件                   |
+| 第二步 | 人工处理                                                 | 根据需求调整迁移文件               |
+| 第三步 | sequelize db:migrate                                     | 运行迁移，生成数据表               |
+| 第四步 | sequelize seed:generate --name article                   | 新建种子文件                       |
+| 第五步 | 人工处理                                                 | 将种子文件修改为自己想填充的数据   |
+| 第六步 | sequelize db:seed --seed xxx-article                     | 运行种子文件，将数据填充到数据表中 |
+
+这里的`种子`部分并不是必须的，但对于一些需要一下子插入大量数据的情况来说，使用种子还是非常方便的。我们可以根据实际的需求来灵活运用。
